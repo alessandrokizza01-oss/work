@@ -1,0 +1,717 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #050609;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(5, 6, 9, 0.72);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #8b5cf6;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    color: #aaa;
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: #fff;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 22px;
+}
+
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 150px 8% 100px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 35%,
+            rgba(123, 76, 255, .22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 220, 255, .08),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow,
+.small-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #9a9aa5;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 140px);
+    line-height: .85;
+    letter-spacing: -7px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #8b5cf6,
+        #43d9ff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    max-width: 620px;
+    color: #999aa4;
+    line-height: 1.8;
+    margin: 35px 0;
+    font-size: 16px;
+}
+
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: .08;
+
+    background-image:
+        linear-gradient(#fff 1px, transparent 1px),
+        linear-gradient(90deg,#fff 1px,transparent 1px);
+
+    background-size: 70px 70px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black,
+        transparent
+    );
+}
+
+
+.primary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 14px;
+
+    padding: 17px 24px;
+
+    background: #ffffff;
+    color: #050609;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(255,255,255,.12);
+}
+
+
+.section {
+    padding: 130px 8%;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 70px;
+}
+
+.section-heading h2,
+.portal h2,
+.workshop h2 {
+    font-size: clamp(40px, 5vw, 75px);
+    line-height: .95;
+    letter-spacing: -4px;
+}
+
+.section-heading h2 span,
+.portal h2 span,
+.workshop h2 span {
+    color: #8b5cf6;
+}
+
+.section-heading > p:last-child {
+    color: #858590;
+    margin-top: 22px;
+    line-height: 1.7;
+}
+
+
+.pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+
+    background: #25252b;
+}
+
+.pathway-card {
+    position: relative;
+
+    min-height: 360px;
+
+    padding: 35px;
+
+    background: #08090d;
+
+    transition: .4s;
+
+    overflow: hidden;
+}
+
+.pathway-card:hover {
+    background: #0d0e14;
+    transform: translateY(-8px);
+}
+
+.pathway-card .icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #12131a;
+
+    border: 1px solid #292a32;
+
+    color: #9c70ff;
+
+    font-size: 21px;
+
+    margin-bottom: 80px;
+}
+
+.number {
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    color: #555;
+    font-size: 11px;
+}
+
+.pathway-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.pathway-card p {
+    color: #81828c;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.pathway-card a {
+    display: inline-flex;
+    gap: 10px;
+
+    margin-top: 25px;
+
+    font-size: 12px;
+    color: #aaa;
+}
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    height: 440px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: .5s;
+}
+
+.project-card:hover {
+    transform: scale(.98);
+}
+
+.project-one {
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #29204e
+        );
+}
+
+.project-two {
+    background:
+        linear-gradient(
+            135deg,
+            #101820,
+            #123e43
+        );
+}
+
+.project-three {
+    grid-column: span 2;
+
+    height: 350px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1c1015,
+            #512438
+        );
+}
+
+.project-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.9)
+        );
+}
+
+.project-overlay span {
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.project-overlay h3 {
+    font-size: 28px;
+    margin: 10px 0 20px;
+}
+
+.project-overlay button {
+    width: max-content;
+
+    padding: 12px 18px;
+
+    border: 1px solid #444;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+
+.course-list {
+    border-top: 1px solid #25252b;
+}
+
+.course {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 250px 80px;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #25252b;
+}
+
+.course-number {
+    color: #666;
+}
+
+.course-info h3 {
+    font-size: 18px;
+}
+
+.course-info p {
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.progress-bar {
+    height: 3px;
+
+    background: #27272e;
+
+    margin-bottom: 8px;
+}
+
+.progress-bar span {
+    display: block;
+
+    height: 100%;
+
+    background: #8b5cf6;
+}
+
+.progress small {
+    color: #777;
+    font-size: 10px;
+}
+
+.rating {
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+.workshop {
+    margin: 0 8%;
+
+    padding: 80px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(139,92,246,.2),
+            transparent 40%
+        ),
+        #0b0c11;
+
+    border: 1px solid #22232b;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.workshop-content {
+    max-width: 650px;
+}
+
+.workshop-content > p:not(.small-label) {
+    color: #858590;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+.countdown {
+    display: flex;
+    gap: 20px;
+}
+
+.countdown div {
+    width: 80px;
+    text-align: center;
+}
+
+.countdown strong {
+    display: block;
+
+    font-size: 42px;
+}
+
+.countdown span {
+    color: #777;
+    font-size: 10px;
+}
+
+
+.portal {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+
+    border-bottom: 1px solid #1d1e24;
+}
+
+.portal > div {
+    max-width: 700px;
+}
+
+.portal p:not(.small-label) {
+    color: #858590;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+
+footer {
+    padding: 80px 8% 30px;
+}
+
+.footer-top {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
+    gap: 50px;
+
+    padding-bottom: 70px;
+}
+
+.footer-brand p,
+footer p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 18px;
+}
+
+footer h4 {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+footer > .footer-top > div > a {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+form {
+    display: flex;
+
+    margin-top: 20px;
+}
+
+form input {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #111217;
+
+    border: 1px solid #282931;
+
+    color: white;
+
+    outline: none;
+}
+
+form button {
+    padding: 0 20px;
+
+    background: white;
+
+    border: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.copyright {
+    padding-top: 25px;
+
+    border-top: 1px solid #1d1e24;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+
+@media(max-width: 1000px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .pathway-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .course {
+        grid-template-columns: 50px 1fr;
+    }
+
+    .progress,
+    .rating {
+        grid-column: 2;
+    }
+
+    .workshop {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin: 0 5%;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media(max-width: 650px) {
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+        letter-spacing: -4px;
+    }
+
+    .section {
+        padding: 90px 6%;
+    }
+
+    .pathway-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-three {
+        grid-column: auto;
+    }
+
+    .course {
+        grid-template-columns: 1fr;
+    }
+
+    .progress,
+    .rating {
+        grid-column: auto;
+    }
+
+    .workshop {
+        margin: 0 6%;
+        padding: 45px 30px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown div {
+        width: 60px;
+    }
+
+    .countdown strong {
+        font-size: 28px;
+    }
+
+    .portal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
